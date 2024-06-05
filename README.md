@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## How to run the project
 
-## Getting Started
+Use `npm run dev` to run the NextJs project
+Use `npx json-server --watch db.json --port 4000` to run the JSON Server in the port 4000
 
-First, run the development server:
+_If JSON Server runs in the port 3000 will generate a conflict with NEXTJS, that executes in the same port_
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Descrição do projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fazer uma cadastro de produtos utilizando o JSON Server e o fetch API
+para simular as requisições a uma api
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Testes de sucesso
+- Testes de erro
+- Teste de estresse (Caracteres aleatorios)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Cadastro de Produtos
+2. Listagem de produtos
 
-## Learn More
+## Cenário de teste
 
-To learn more about Next.js, take a look at the following resources:
+### Tests de sucesso
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. usar toToHaveBeenCalledWith(args) para verificar se a função de handleSubmit está sendo chamada com um argumento do tipo string
+2. usar toBeLessThan() para verificar se o valor passado como argumento na função handleSubimit
+   possui um tamanho de caracteres dentro do limite esperado
+3. usar toHaveBeenCalled() para verificar se a função deleteData está sendo chamada
+4. usar toHaveReturned() para verificar se a função deleteData possui um retorno de sucesso
+5. usar toThrow(error?) para verificar se a função deleteData lança um erro
+6. usar toHaveBeenCalled() para verificar se a função getData está sendo chamada
+7. usar toHaveReturned() para verificar se a função getData possui um retorno de sucesso
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Advertência
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Não testar a implementação da função, mas a sua funcionalidade
+# Unity-Tests
